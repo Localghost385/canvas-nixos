@@ -61,11 +61,12 @@
 
   boot = {
     loader = {
-      systemd-boot = {
+      efi.canTouchEfiVariables = true;
+      grub = {
         enable = true;
-      };
-      efi = {
-        canTouchEfiVariables = true;
+        devices = ["nodev"];
+        efiSupport = true;
+        useOSProber = true;
       };
     };
   };

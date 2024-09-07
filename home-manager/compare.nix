@@ -1,40 +1,17 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  # You can import other home-manager modules here
-  imports = [
-    # If you want to use home-manager modules from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModule
+{ inputs, lib, config, pkgs, ... }:
 
-    # You can also split up your configuration and import pieces of it here:
+{
+  imports = [
+    # Existing imports...
     # ./nvim.nix
   ];
 
   nixpkgs = {
-    # You can add overlays here
     overlays = [
-      # If you want to use overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # }
       inputs.canvas-nvim.overlays.default
     ];
-    # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
     };
   };
@@ -44,9 +21,8 @@
     homeDirectory = "/home/grace";
   };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  home.packages = with pkgs; [ 
+  # Include the custom spinny package
+  home.packages = with pkgs; [
     alsa-utils
     musescore
     obsidian
@@ -70,11 +46,10 @@
     git
     wf-recorder
     nvim-pkg
-
-    # (import /home/grace/nix-config/packages/spinny/default.nix)
+    # Add spinny here
+    (inputs.self.packages.x86_64-linux.spinny or (import ./packages/spinny/default.nix {}).spinny)
   ];
 
-  # Enable home-manager and git
   programs = {
     home-manager = {
       enable = true;
@@ -112,12 +87,9 @@
         gtk-application-prefer-dark-theme=0
       '';
     };
-
   };
 
-  # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
 }
