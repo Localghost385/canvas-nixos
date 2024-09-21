@@ -11,6 +11,6 @@ pkgs.stdenv.mkDerivation {
   };
   installPhase = ''
     mkdir -p $out/share/grub/themes
-    cp -r customize/nixos $out/share/grub/themes/
+    cp -r customize/apple $out/share/grub/themes/
   '';
 }

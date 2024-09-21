@@ -9,7 +9,10 @@
 let
   # Import spinny package
   spinny = import ../packages/spinny {
-    inherit (pkgs) lib rustPlatform fetchFromGitHub;
+    inherit pkgs;
+  };
+  canvas-bibata = (import ../themes/canvas-bibata).packages.x86_64-linux.canvas-bibata {
+    inherit pkgs;
   };
 in
 {
@@ -81,7 +84,8 @@ in
     nvim-pkg
     nixpkgs-fmt
 
-    spinny # Add spinny package here
+    spinny
+    canvas-bibata
   ];
 
   # Enable home-manager and git
@@ -96,6 +100,9 @@ in
       extraConfig = {
         core = {
           editor = "${pkgs.vscode}/bin/code --wait";
+        };
+        init = {
+          defaultBranch = "main";
         };
       };
     };
@@ -112,7 +119,7 @@ in
       package = pkgs.papirus-icon-theme;
     };
     cursorTheme = {
-      name = "Bibata-Canvas";
+      name = "canvas-bibata";
     };
     theme = {
       name = "catppuccin-latte-lavender-standard+default";

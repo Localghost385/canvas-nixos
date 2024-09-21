@@ -74,7 +74,7 @@ in
         devices = [ "nodev" ];
         efiSupport = true;
         useOSProber = true;
-        theme = "${canvas-grub}/themes/apple";
+        theme = "${canvas-grub}/share/grub/themes/apple";
       };
     };
   };
