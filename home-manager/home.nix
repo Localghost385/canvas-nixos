@@ -11,7 +11,7 @@ let
   spinny = import ../packages/spinny {
     inherit pkgs;
   };
-  canvas-bibata = (import ../themes/canvas-bibata).packages.x86_64-linux.canvas-bibata {
+  canvas-bibata = (import ../themes/canvas-bibata/flake.nix).packages.x86_64-linux.canvas-bibata {
     inherit pkgs;
   };
 in
