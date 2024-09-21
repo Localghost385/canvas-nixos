@@ -1,12 +1,18 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
+{ inputs
+, lib
+, config
+, pkgs
+, ...
+}:
+let
+  # Import spinny package
+  spinny = import ../packages/spinny {
+    inherit (pkgs) lib rustPlatform fetchFromGitHub;
+  };
+in
 {
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
@@ -45,8 +51,7 @@
   };
 
   # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  home.packages = with pkgs; [ 
+  home.packages = with pkgs; [
     alsa-utils
     musescore
     obsidian
@@ -57,21 +62,26 @@
     spotify
     gcc
     gnumake
+    hyprlock
     cmake
     yarn
     tree
+    p7zip
     ags
     upower
     pavucontrol
     swww
     fastfetch
     firefox-wayland
+    direnv
+    blender
     vscode
     git
     wf-recorder
     nvim-pkg
+    nixpkgs-fmt
 
-    # (import /home/grace/nix-config/packages/spinny/default.nix)
+    spinny # Add spinny package here
   ];
 
   # Enable home-manager and git
@@ -83,6 +93,11 @@
       enable = true;
       userEmail = "localghost385@gmail.com";
       userName = "Grace Murphy";
+      extraConfig = {
+        core = {
+          editor = "${pkgs.vscode}/bin/code --wait";
+        };
+      };
     };
   };
 
@@ -112,7 +127,6 @@
         gtk-application-prefer-dark-theme=0
       '';
     };
-
   };
 
   # Nicely reload system units when changing configs
