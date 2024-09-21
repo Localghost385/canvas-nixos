@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation {
-  pname = "canvas-bibata-cursors";
+  pname = "canvas-bibata";
   version = "1.0.0";
 
   src = pkgs.fetchFromGitHub {
