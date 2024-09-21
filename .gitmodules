@@ -1,0 +1,3 @@
+[submodule "themes/canvas-bibata/upstream"]
+	path = themes/canvas-bibata/upstream
+	url = https://github.com/localghost385/canvas-bibata
