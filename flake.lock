@@ -1,25 +1,5 @@
 {
   "nodes": {
-    "canvas-bibata": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1726925304,
-        "narHash": "sha256-Ez8jz/C0xPmffsnH8lZKUz8FFJQBBHYGCBt1AAk+Ug4=",
-        "owner": "Localghost385",
-        "repo": "canvas-bibata",
-        "rev": "7ad75aae21967129d76b738a0a899dd92f324800",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Localghost385",
-        "repo": "canvas-bibata",
-        "type": "github"
-      }
-    },
     "canvas-nvim": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -164,7 +144,6 @@
     },
     "root": {
       "inputs": {
-        "canvas-bibata": "canvas-bibata",
         "canvas-nvim": "canvas-nvim",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2"

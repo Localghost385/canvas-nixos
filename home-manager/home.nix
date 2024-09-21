@@ -11,6 +11,9 @@ let
   spinny = import ../packages/spinny {
     inherit pkgs;
   };
+  canvas-bibata = import ../themes/canvas-bibata {
+    inherit pkgs;
+  };
 in
 {
   # You can import other home-manager modules here
@@ -78,7 +81,7 @@ in
     nixpkgs-fmt
 
     spinny
-    inputs.canvas-bibata
+    canvas-bibata
   ];
 
   # Enable home-manager and git
