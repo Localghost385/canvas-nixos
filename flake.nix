@@ -11,39 +11,41 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #neovim
+    # Neovim config
     canvas-nvim = {
       url = "github:Localghost385/canvas.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # canvas-bibata flake
+    canvas-bibata = {
+      url = "github:Localghost385/canvas-bibata";
+      inputs.nixpkgs.follows = "nixpkgs"; # Optional, follow nixpkgs input
+    };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
+  outputs = { self, nixpkgs, home-manager, canvas-bibata, ... } @ inputs: let
     inherit (self) outputs;
   in {
     # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       grace-nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        # > Our main nixos configuration file <
-        modules = [./nixos/configuration.nix];
+        specialArgs = { inherit inputs outputs; };
+        modules = [
+          ./nixos/configuration.nix
+          ./nixos/hardware-configuration.nix  # Hardware configuration
+        ];
       };
     };
 
     # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       "grace@grace-nixos" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        # > Our main home-manager configuration file <
-        modules = [./home-manager/home.nix];
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+        modules = [
+          ./home-manager/home.nix  # Use the canvas-bibata in home-manager
+        ];
       };
     };
   };

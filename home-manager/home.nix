@@ -11,9 +11,6 @@ let
   spinny = import ../packages/spinny {
     inherit pkgs;
   };
-  canvas-bibata = (import ../themes/canvas-bibata/flake.nix).packages.x86_64-linux.canvas-bibata {
-    inherit pkgs;
-  };
 in
 {
   # You can import other home-manager modules here
@@ -63,11 +60,7 @@ in
     wofi
     brightnessctl
     spotify
-    gcc
-    gnumake
     hyprlock
-    cmake
-    yarn
     tree
     p7zip
     ags
@@ -77,15 +70,15 @@ in
     fastfetch
     firefox-wayland
     direnv
-    blender
     vscode
     git
     wf-recorder
     nvim-pkg
+    nwg-look
     nixpkgs-fmt
 
     spinny
-    canvas-bibata
+    inputs.canvas-bibata
   ];
 
   # Enable home-manager and git

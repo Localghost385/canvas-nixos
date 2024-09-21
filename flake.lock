@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "canvas-bibata": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1726925304,
+        "narHash": "sha256-Ez8jz/C0xPmffsnH8lZKUz8FFJQBBHYGCBt1AAk+Ug4=",
+        "owner": "Localghost385",
+        "repo": "canvas-bibata",
+        "rev": "7ad75aae21967129d76b738a0a899dd92f324800",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Localghost385",
+        "repo": "canvas-bibata",
+        "type": "github"
+      }
+    },
     "canvas-nvim": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -84,11 +104,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1725694918,
-        "narHash": "sha256-+HsjshXpqNiJHLaJaK0JnIicJ/a1NquKcfn4YZ3ILgg=",
+        "lastModified": 1726902823,
+        "narHash": "sha256-Gkc7pwTVLKj4HSvRt8tXNvosl8RS9hrBAEhOjAE0Tt4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "aaebdea769a5c10f1c6e50ebdf5924c1a13f0cda",
+        "rev": "14929f7089268481d86b83ed31ffd88713dcd415",
         "type": "github"
       },
       "original": {
@@ -128,11 +148,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1725634671,
-        "narHash": "sha256-v3rIhsJBOMLR8e/RNWxr828tB+WywYIoajrZKFM+0Gg=",
+        "lastModified": 1726755586,
+        "narHash": "sha256-PmUr/2GQGvFTIJ6/Tvsins7Q43KTMvMFhvG6oaYK+Wk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+        "rev": "c04d5652cfa9742b1d519688f65d1bbccea9eb7e",
         "type": "github"
       },
       "original": {
@@ -144,6 +164,7 @@
     },
     "root": {
       "inputs": {
+        "canvas-bibata": "canvas-bibata",
         "canvas-nvim": "canvas-nvim",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2"
