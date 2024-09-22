@@ -8,7 +8,7 @@ pkgs.stdenv.mkDerivation {
     owner = "localghost385";
     repo = "canvas-grub";
     rev = "main";
-    hash = "sha256-c7FAQQW6G26iNE6Gh9N6XKiszDnxGnnOxkJ533Q37yM=";
+    hash = "sha256-cduIqAUqyDbkgX89LG+GsEo04i8b3FkjEwGpDLRDpI4=";
   };
 
   installPhase = ''

@@ -8,7 +8,7 @@ pkgs.rustPlatform.buildRustPackage rec {
     owner = "localghost385";
     repo = pname;
     rev = "main";
-    sha256 = "sha256-IzKVTAfiDBO62gh33a3IGbgqUQqWg3M34NwLJjwpVZk=";
+    sha256 = "sha256-e5GCtrVpt5BTHZtM6mAlQkVjVQpBYhddxYHC3XmhLcI=";
   };
 
   cargoHash = "sha256-xcfaLO3tFIbahj4AgHL24GaaUBSJZabAfz8eX+Q1RLk=";

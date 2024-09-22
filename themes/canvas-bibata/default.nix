@@ -8,7 +8,7 @@ pkgs.stdenv.mkDerivation {
     owner = "localghost385";
     repo = "canvas-bibata";
     rev = "main"; 
-    sha256 = "sha256-Ez8jz/C0xPmffsnH8lZKUz8FFJQBBHYGCBt1AAk+Ug4=";
+    sha256 = "sha256-CJAqZ7Wdd2wQgaZtOJInxCcPE2+TkH9z3XtMVsjcYP8=";
   };
 
   installPhase = ''
