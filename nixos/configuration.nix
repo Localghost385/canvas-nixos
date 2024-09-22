@@ -5,7 +5,7 @@
 , ...
 }:
 let
-  canvas-grub = import ../packages/canvas-grub {
+  canvas-grub = import ../themes/canvas-grub {
     inherit pkgs;
   };
 in
@@ -46,7 +46,7 @@ in
         devices = [ "nodev" ];
         efiSupport = true;
         useOSProber = true;
-        theme = "${canvas-grub}/share/grub/themes/apple";
+        theme = "${canvas-grub}/share/grub/themes/canvas-grub";
       };
     };
   };

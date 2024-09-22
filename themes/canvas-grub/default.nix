@@ -1,16 +1,24 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation {
-  pname = "distro-grub-themes";
-  version = "3.1";
+  pname = "canvas-grub";
+  version = "0.1.0";
+
   src = pkgs.fetchFromGitHub {
-    owner = "AdisonCavani";
-    repo = "distro-grub-themes";
-    rev = "v3.1";
-    hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
+    owner = "localghost385";
+    repo = "canvas-grub";
+    rev = "main";
+    hash = "sha256-c7FAQQW6G26iNE6Gh9N6XKiszDnxGnnOxkJ533Q37yM=";
   };
+
   installPhase = ''
     mkdir -p $out/share/grub/themes
-    cp -r customize/apple $out/share/grub/themes/
+    cp -r canvas-grub $out/share/grub/themes/
   '';
+
+  meta = with pkgs.lib; {
+    description = "Canvas Grub theme";
+    license = licenses.mit;
+    platforms = platforms.linux;
+  };
 }
