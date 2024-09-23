@@ -52,7 +52,7 @@ in
     direnv
     vscode
     git
-    git-credential-manager
+    nemo
     wf-recorder
     nvim-pkg
     nwg-look
@@ -77,6 +77,9 @@ in
         init = {
           defaultBranch = "main";
         };
+        credential = {
+          helper = "oauth";
+        };
       };
     };
   };
@@ -95,7 +98,7 @@ in
       name = "canvas-bibata";
     };
     theme = {
-      name = "catppuccin-latte-lavender-standard+default";
+      name = "catppuccin-latte-lavender-standard+rimless";
     };
     gtk3.extraConfig = {
       Settings = ''

@@ -4,3 +4,6 @@
 [submodule "themes/canvas-grub/upstream"]
 	path = themes/canvas-grub/upstream
 	url = https://github.com/localghost385/canvas-grub
+[submodule "themes/canvas-gtk/upstream"]
+	path = themes/canvas-gtk/upstream
+	url = https://github.com/localghost385/canvas-gtk
