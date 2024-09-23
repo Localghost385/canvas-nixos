@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
 
-pkgs.stdenv.mkDerivation {
+pkgs.stdenvNoCC.mkDerivation {
   pname = "canvas-grub";
   version = "0.1.0";
 

@@ -11,6 +11,9 @@ let
   canvas-bibata = import ../themes/canvas-bibata {
     inherit pkgs;
   };
+    canvas-gtk = import ../themes/canvas-gtk {
+    inherit pkgs;
+  };
 in
 {
   imports = [
@@ -60,6 +63,7 @@ in
 
     spinny
     canvas-bibata
+    canvas-gtk
   ];
 
   programs = {
