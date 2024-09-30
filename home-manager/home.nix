@@ -44,6 +44,7 @@ in
     brightnessctl
     spotify
     hyprlock
+    hypridle
     tree
     p7zip
     ags
@@ -102,7 +103,7 @@ in
       name = "canvas-bibata";
     };
     theme = {
-      name = "catppuccin-latte-lavender-standard+rimless";
+      name = "catppuccin-latte-lavender-standard+default";
     };
     gtk3.extraConfig = {
       Settings = ''

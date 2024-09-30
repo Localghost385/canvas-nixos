@@ -14,6 +14,8 @@ in
     ./hardware-configuration.nix
   ];
 
+  virtualisation.virtualbox.host.enable = true;
+
   nixpkgs = {
     overlays = [
     ];
@@ -131,9 +133,17 @@ in
       enable = true;
     };
     pipewire = {
-      enable = false; 
+      enable = false;
       alsa.enable = false;
-      pulse.enable = false; 
+      pulse.enable = false;
+    };
+    displayManager = {
+      sddm = {
+        wayland = {
+            enable = true;
+        };
+        enable = true;
+      };
     };
   };
 
