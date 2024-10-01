@@ -8,6 +8,9 @@ let
   canvas-grub = import ../themes/canvas-grub {
     inherit pkgs;
   };
+  canvas-sddm = import ../themes/canvas-sddm {
+    inherit pkgs;
+  };
 in
 {
   imports = [
@@ -140,9 +143,10 @@ in
     displayManager = {
       sddm = {
         wayland = {
-            enable = true;
+          enable = true;
         };
         enable = true;
+        theme = "canvas-sddm";
       };
     };
   };
