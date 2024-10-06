@@ -8,7 +8,7 @@ pkgs.stdenvNoCC.mkDerivation {
     owner = "localghost385";
     repo = "canvas-sddm";
     rev = "main";
-    hash = "sha256-D4V1k0DA5Y5PXUjJzZ/sxs7ucS0WT0Uo2KYhZR5nAD4=";
+    hash = "sha256-/DARkWuBe+WrvemuMU763wFl6bEwcE0Vlqp4VrlmV+s=";
   };
 
   installPhase = ''

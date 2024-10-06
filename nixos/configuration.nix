@@ -92,7 +92,9 @@ in
   };
 
   environment = {
-    systemPackages = with pkgs; [ ];
+    systemPackages = with pkgs; [ 
+      canvas-sddm
+    ];
   };
 
   fonts =

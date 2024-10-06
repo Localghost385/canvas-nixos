@@ -4,13 +4,13 @@
 		"base-light": "#ffffff",
 		"base-dark": "#41445a",
 
-		"red": "#e86876",
-		"pink": "#e896aa",
-		"purple": "#ab96e8",
-		"blue": "#96aae8",
-		"teal": "#96d3e8",
-		"green": "#aae896",
-		"yellow": "#e8d496",
-		"orange": "#e8aa77"
+		"red": "#D52035",
+		"pink": "#e86876",
+		"purple": "#8669DD",
+		"blue": "#4A6ED9",
+		"teal": "#4CB4D6",
+		"green": "#4FC229",
+		"yellow": "#DAB852",
+		"orange": "#DE843B"
 	}
 }
